@@ -104,9 +104,10 @@ def HyBO(objective=None, n_eval=200, path=None, parallel=False, store_data=True,
     else:
         surrogate_model, cfg_data, logfile_dir = load_model_data(path, exp_dir=experiment_directory())
 
-    for _ in range(n_eval):
+    for i in range(n_eval):
         start_time = time.time()
         reference = torch.min(eval_outputs, dim=0)[0].item()
+        print(f"Iteration {i}")
         print('(%s) Sampling' % time.strftime('%H:%M:%S', time.localtime()))
         sample_posterior = posterior_sampling(surrogate_model, eval_inputs, eval_outputs, n_vertices, adj_mat_list, log_order_variance,
                                               log_beta, lengthscale,  sorted_partition, n_sample=10, n_burn=0, n_thin=1)

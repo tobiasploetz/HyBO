@@ -39,7 +39,7 @@ def cma_es_optimizer(objective, x_init, max_acquisition, inference_samples, part
         Y = -1 * continuous_acquisition_expectation(xs, x_init[:objective.num_discrete].numpy(), 
             inference_samples, partition_samples, n_vertices, acquisition_func, reference, batch=True) 
         total_time_in_acq += time.time() - temp_time
-        es.tell(xs, Y)  # return the result to the optimizer
+        es.tell(xs, Y.ravel())  # return the result to the optimizer
         if (iter > 10):
             break
     best_x = torch.from_numpy(es.best.x).float()

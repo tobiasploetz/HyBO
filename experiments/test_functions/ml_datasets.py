@@ -9,7 +9,7 @@ from sklearn.naive_bayes import BernoulliNB, MultinomialNB
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
 from sklearn.svm import LinearSVC, SVC
 from sklearn.linear_model import SGDClassifier, LogisticRegression
-from sklearn.linear_model.passive_aggressive import PassiveAggressiveClassifier
+from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import AdaBoostClassifier, ExtraTreesClassifier, GradientBoostingClassifier, RandomForestClassifier

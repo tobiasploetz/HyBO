@@ -8,5 +8,5 @@ openml
 numpy
 pygame
 box2d-py
-coco: https://github.com/numbbo/coco
-cma: https://github.com/CMA-ES/pycma
+#git+git://github.com/numbbo/coco.git
+#git+git://github.com/CMA-ES/pycma.git
