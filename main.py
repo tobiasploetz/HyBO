@@ -47,7 +47,6 @@ def HyBO(
     :return:
     """
     acquisition_func = expected_improvement
-    print("Hi)")
 
     n_vertices = adj_mat_list = None
     eval_inputs = eval_outputs = log_beta = sorted_partition = lengthscales = None
@@ -137,7 +136,7 @@ def HyBO(
     for i in range(n_eval):
         start_time = time.time()
         reference = torch.min(eval_outputs, dim=0)[0].item()
-        print(f"Iteration {i}")
+        print(f"\n\nIteration {i}\n\n")
         print("(%s) Sampling" % time.strftime("%H:%M:%S", time.localtime()))
         sample_posterior = posterior_sampling(
             surrogate_model,
@@ -258,7 +257,7 @@ if __name__ == "__main__":
     kwag_ = vars(args_)
     objective_ = kwag_["objective"]
     print(kwag_)
-    for i in range(25):
+    for i in range(1):
         if objective_ == "coco":
             random_seed_ = sorted(generate_random_seed_coco())[i]
             kwag_["objective"] = MixedIntegerCOCO(
